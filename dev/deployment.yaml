@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: localhost:5000/test-app:latest
+        image: chitransh1/myrepo:latest
         ports:
         - containerPort: 5000
