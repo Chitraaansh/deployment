@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Define a route for the homepage
 @app.route('/')
-def home():
+def index():
     return 'Hi this is a simple Web Application to demonstrate working of K8s!'
 
 
