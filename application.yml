@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/Chitraaansh/deployment.git
     targetRevision: HEAD
-    path: deployment
+    path: dev
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
