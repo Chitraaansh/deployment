@@ -5,7 +5,7 @@ FROM python:3.10
 WORKDIR /app
 
 # Copy the Flask application script into the container at /app
-COPY . /app
+COPY ./app.py /app
 
 # Install Flask and other dependencies
 RUN pip install --no-cache-dir Flask
