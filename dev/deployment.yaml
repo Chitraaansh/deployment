@@ -17,4 +17,3 @@ spec:
         image: chitransh1/myrepo:2.0
         ports:
         - containerPort: 5000
-    type: NodePort
