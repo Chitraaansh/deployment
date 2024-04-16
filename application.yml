@@ -22,19 +22,3 @@ spec:
     automated:
       selfHeal: true
       prune: true
-
-  hooks:
-    - name: hello-world-hook
-      when: Succeeded
-      hookType: PostSync
-      manifest:
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          labels:
-            app: myapp
-        spec:
-          containers:
-            - name: hello-world-container
-              image: your-image-name:tag  # Replace with your image name
-              command: [ "/bin/sh", "-c", "/path/to/hello_world.sh" ]

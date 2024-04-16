@@ -17,3 +17,24 @@ spec:
         image: chitransh1/myrepo:2.0
         ports:
         - containerPort: 5000
+
+---
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postsync-hook
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  template:
+    spec:
+      containers:
+        - name: postsync-job-success
+          image: ubuntu
+          command:
+            - /bin/bash
+            - -c
+            - |
+              echo "This is Post-Sync"
+      restartPolicy: Never
