@@ -22,3 +22,8 @@ spec:
     automated:
       selfHeal: true
       prune: true
+
+  postSync:
+    hooks:
+      - name: hello-world-hook
+        command: ["/bin/sh", "-c", "kubectl exec -n myapp -c myapp $(kubectl get pods -n myapp -l app=myapp -o jsonpath='{.items[0].metadata.name}') -- /path/to/hello_world.sh"]
