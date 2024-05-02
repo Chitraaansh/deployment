@@ -36,5 +36,11 @@ spec:
             - /bin/bash
             - -c
             - |
-              echo "This is Post-Sync"
+              failed_pods=$(kubectl get pods -n myapp -l app=myapp -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}' | grep False)
+
+              if [[ -n "$failed_pods" ]]; then
+                echo "One or more pods are down: $failed_pods"
+              else
+                echo "All pods are running successfully."
+              fi
       restartPolicy: Never
