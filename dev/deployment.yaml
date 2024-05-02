@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: chitransh1/myrepo:2.0
+        #image: chitransh1/myrepo:2.0
+        image: nginxcvghjklkjhgcvghjkijhgv
         ports:
         - containerPort: 5000
 
